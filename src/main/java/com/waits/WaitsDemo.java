@@ -47,8 +47,9 @@ public class WaitsDemo {
 
 	}
 
-	public static void numberOfElementsToBeMoreThan(By iphoneTitle, int count) {
-		wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(iphoneTitle, count));
+	public static void numberOfElementsToBeMoreThan(By product, int count) {
+		wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(product, count));
 	}
+	
 
 }
