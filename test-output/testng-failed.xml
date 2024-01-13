@@ -5,7 +5,9 @@
     <classes>
       <class name="com.testcases.TestCase">
         <methods>
-          <include name="verifyManagoBrandProductsUsingPage"/>
+          <include name="verifyProductFilter"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- com.testcases.TestCase -->
     </classes>
