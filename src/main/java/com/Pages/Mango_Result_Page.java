@@ -24,7 +24,7 @@ public class Mango_Result_Page {
 		return keyword.getText(managoProducts);
 	}
 
-	public void verifyproductTitlesContains(String expectedText) throws InvalidSelectorException {
+	public void verifyMangoproductTitlesContains(String expectedText) throws InvalidSelectorException {
 		List<String> newList = getManagoProducts();
 		SoftAssert softy = new SoftAssert();
 		for (String Tiltes : newList) {

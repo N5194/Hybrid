@@ -5,9 +5,13 @@
     <classes>
       <class name="com.testcases.TestCase">
         <methods>
+<<<<<<< HEAD
           <include name="verifyProductFilter"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+=======
+          <include name="verifyWishListAddProduct"/>
+>>>>>>> stash
         </methods>
       </class> <!-- com.testcases.TestCase -->
     </classes>
