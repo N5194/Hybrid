@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
@@ -31,7 +32,7 @@ import com.Pages.SearchNavigationPage;
 import com.Pages.Search_Mango_Product_Page;
 import com.exception.InvalidSelectorException;
 
-public class TestCase extends TestBase {
+public class TestCase {
 	@Test
 	public void verifyManagoBrandProducts() {
 
@@ -61,7 +62,46 @@ public class TestCase extends TestBase {
 		Search_Mango_Product_Page mango = new Search_Mango_Product_Page();
 		mango.enterTextToSearch("MANGO", Keys.ENTER);
 		Mango_Result_Page m = new Mango_Result_Page();
-		m.verifyproductTitlesContains("MANGO");
+		m.verifyMangoproductTitlesContains("MANGO");
+	}
+
+	@Test
+	public void verifyMyntraLoginPage() throws InterruptedException {
+		ChromeOptions ch = new ChromeOptions();
+		ch.addArguments("--disable-notifications");
+		ch.addArguments("--incognito");
+		RemoteWebDriver driver = new ChromeDriver(ch);
+		driver.get("https://www.myntra.com/");
+		driver.manage().window().maximize();
+		driver.findElement(By.cssSelector("span[data-reactid=\"856\"]")).click();
+		driver.findElement(By.cssSelector("a[data-reactid=\"865\"]")).click();
+		driver.findElement(By.cssSelector("input[class=\"form-control mobileNumberInput\"]")).sendKeys("9156482884");
+		driver.findElement(By.cssSelector("div[class=\"submitBottomOption\"]")).click();
+	}
+
+	@Test
+	public void verifyWishListAddProduct() {
+		ChromeOptions ch = new ChromeOptions();
+		ch.addArguments("--disable-notifications");
+		ch.addArguments("--incognito");
+		RemoteWebDriver driver = new ChromeDriver(ch);
+		driver.get("https://www.myntra.com/");
+		driver.manage().window().maximize();
+		Actions a = new Actions(driver);
+		WebElement b = driver.findElement(By.cssSelector("a[data-reactid=\"676\"]"));
+		a.moveToElement(b).perform();
+		driver.findElement(By.cssSelector("a[data-reactid=\"747\"]")).click();
+		driver.findElement(By.cssSelector("h4[class=\"product-product\"]")).click();
+		String parenthandles = driver.getWindowHandle();
+		Set<String> handles = driver.getWindowHandles();
+		handles.remove(parenthandles);
+
+		for (String handle : handles) {
+			driver.switchTo().window(handle);
+			driver.executeScript("window.scrollBy(0,200)");
+			driver.findElement(By.cssSelector("span[class=\"myntraweb-sprite pdp-notWishlistedIcon sprites-notWishlisted pdp-flex pdp-center \"]")).click();
+
+		}
 	}
 
 	@Test
