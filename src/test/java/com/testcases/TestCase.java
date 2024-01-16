@@ -10,6 +10,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,6 +28,7 @@ import com.Base.TestBase;
 import com.Keywoards.KeywordsDemo;
 import com.Pages.HeadphoneResultPage;
 import com.Pages.HnMResultPage;
+import com.Pages.LinkToInstagram_Page;
 import com.Pages.Mango_Result_Page;
 import com.Pages.Myntra_Login_Page;
 import com.Pages.RayBanFilterResultPage;
@@ -36,6 +38,7 @@ import com.Pages.SearchHeadphonePage;
 import com.Pages.SearchHnMProductPage;
 import com.Pages.SearchNavigationPage;
 import com.Pages.Search_Mango_Product_Page;
+import com.Pages.VerifyInstagram_Page;
 import com.Pages.WishList_Page;
 import com.exception.InvalidSelectorException;
 
@@ -282,6 +285,47 @@ public class TestCase extends TestBase {
 		page.navigateToWomen();
 		page.navigateToKids();
 	}
+<<<<<<< HEAD
+=======
+
+	@Test
+	public void verifyInstagramlinkOnMyntra() {
+		ChromeOptions ch = new ChromeOptions();
+		ch.addArguments("--disable-notifications");
+		ch.addArguments("--incognito");
+		RemoteWebDriver driver = new ChromeDriver(ch);
+		driver.get("https://www.myntra.com/");
+		driver.manage().window().maximize();
+		driver.executeScript("window.scrollBy(0,2800)");
+		driver.findElement(By.cssSelector(
+				"img[src=\"https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png\"]"))
+				.click();
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
+		wait.pollingEvery(Duration.ofMillis(2000));
+		wait.withTimeout(Duration.ofSeconds(60));
+		wait.ignoring(NoSuchWindowException.class);
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[class=\"_abn5 _abn6 _aa5h\"]")))
+				.click();
+		driver.get("https://www.instagram.com/myntra/");
+		// Perform assertion on the Instagram page
+		String instagramPageTitle = driver.getTitle();
+		System.out.println(instagramPageTitle);
+		Assert.assertTrue(instagramPageTitle.contains("Instagram"), "Expected title contains 'Instagram'");
+
+	}
+
+	@Test
+	public void verifyInstagramlinkOnMyntraUsingPageObjectModel() {
+		LinkToInstagram_Page l = new LinkToInstagram_Page();
+		l.openMyntraHomePage();
+		l.clickInstagramLink();
+		VerifyInstagram_Page v = new VerifyInstagram_Page();
+		v.switchToInstagramPage();
+		String instagramPageTitle = v.getInstagramPageTitle();
+		System.out.println(instagramPageTitle);
+		Assert.assertTrue(v.isInstagramPageTitleContaining("Instagram"), "Expected title contains 'Instagram'");
+	}
+>>>>>>> stash
 
 	@Test
 	public void verifyBrowserCompatibility() {
