@@ -23,6 +23,17 @@ public class KeywordsDemo {
 	 * 
 	 * @param browserName
 	 */
+	
+	/**
+	 * This method return the driver instance. Make sure,before calling this one
+	 * should call {@code open browser(String browserName)} method so that it can
+	 * initialize driver instance
+	 * 
+	 * @return driver instance
+	 */
+	public static RemoteWebDriver getDriver() {
+		return driver;
+	}
 	public void openBrowser(String browserName) {
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();
@@ -36,16 +47,6 @@ public class KeywordsDemo {
 		}
 	}
 
-	/**
-	 * This method return the driver instance. Make sure,before calling this one
-	 * should call {@code open browser(String browserName)} method so that it can
-	 * initialize driver instance
-	 * 
-	 * @return driver instance
-	 */
-	public static RemoteWebDriver getDriver() {
-		return driver;
-	}
 
 	/**
 	 * this method will open specific url

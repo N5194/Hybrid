@@ -1,11 +1,14 @@
 package com.testcases;
 
+import static org.testng.Assert.assertTrue;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,18 +24,21 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.Base.TestBase;
+import com.Keywoards.KeywordsDemo;
 import com.Pages.HeadphoneResultPage;
 import com.Pages.HnMResultPage;
 import com.Pages.Mango_Result_Page;
+import com.Pages.Myntra_Login_Page;
 import com.Pages.RayBanFilterResultPage;
 import com.Pages.RayBanSearchPage;
 import com.Pages.SearchHeadphonePage;
 import com.Pages.SearchHnMProductPage;
 import com.Pages.SearchNavigationPage;
 import com.Pages.Search_Mango_Product_Page;
+import com.Pages.WishList_Page;
 import com.exception.InvalidSelectorException;
 
-public class TestCase {
+public class TestCase extends TestBase {
 	@Test
 	public void verifyManagoBrandProducts() {
 
@@ -76,7 +82,17 @@ public class TestCase {
 		driver.findElement(By.cssSelector("span[data-reactid=\"856\"]")).click();
 		driver.findElement(By.cssSelector("a[data-reactid=\"865\"]")).click();
 		driver.findElement(By.cssSelector("input[class=\"form-control mobileNumberInput\"]")).sendKeys("9156482884");
-		driver.findElement(By.cssSelector("div[class=\"submitBottomOption\"]")).click();
+//		driver.findElement(By.cssSelector("div[class=\"submitBottomOption\"]")).click();
+		driver.findElement(By.cssSelector("[class=\"submitBottomOption\"]")).click();
+	}
+
+	@Test
+	public void verifyMyntraLoginPageUsingPage() throws InterruptedException {
+		Myntra_Login_Page m = new Myntra_Login_Page();
+		m.clickLoginButton();
+		m.clickSignUpLink();
+		m.enterMobileNumber("9156482884");
+		m.clickSubmitButton();
 	}
 
 	@Test
@@ -99,9 +115,21 @@ public class TestCase {
 		for (String handle : handles) {
 			driver.switchTo().window(handle);
 			driver.executeScript("window.scrollBy(0,200)");
-			driver.findElement(By.cssSelector("span[class=\"myntraweb-sprite pdp-notWishlistedIcon sprites-notWishlisted pdp-flex pdp-center \"]")).click();
+			driver.findElement(By.cssSelector(
+					"span[class=\"myntraweb-sprite pdp-notWishlistedIcon sprites-notWishlisted pdp-flex pdp-center \"]"))
+					.click();
 
 		}
+	}
+
+	@Test
+	public void verifyWishListAddProductUsingPageObjectModel() {
+		WishList_Page w = new WishList_Page();
+		w.hoverOverMenu();
+		w.clickWishlist();
+		w.clickProduct();
+		w.switchToNewWindow();
+		w.addToWishlist();
 	}
 
 	@Test
@@ -246,12 +274,13 @@ public class TestCase {
 
 	}
 
-	@Test
 	public void verifyTagNavigation() throws InterruptedException {
 		SearchNavigationPage page = new SearchNavigationPage();
 		page.navigateToMen();
 		page.navigateToWomen();
 		page.navigateToKids();
 	}
+	
+	
 
 }
