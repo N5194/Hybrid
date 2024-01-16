@@ -5,7 +5,7 @@
     <classes>
       <class name="com.testcases.TestCase">
         <methods>
-          <include name="verifyMyntraLoginPage"/>
+          <include name="verifyInstagramlinkOnMyntra"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

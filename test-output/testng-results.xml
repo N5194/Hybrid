@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results ignored="15" total="16" passed="1" failed="0" skipped="0">
+=======
+<testng-results ignored="14" total="15" passed="1" failed="0" skipped="0">
+>>>>>>> stash
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2024-01-16T15:32:59 IST" name="Default suite" finished-at="2024-01-16T15:33:08 IST" duration-ms="8178">
+=======
+  <suite started-at="2024-01-16T17:37:10 IST" name="Default suite" finished-at="2024-01-16T17:37:20 IST" duration-ms="9725">
+>>>>>>> stash
     <groups>
     </groups>
+<<<<<<< HEAD
     <test started-at="2024-01-16T15:32:59 IST" name="Default test" finished-at="2024-01-16T15:33:08 IST" duration-ms="8178">
+=======
+    <test started-at="2024-01-16T17:37:10 IST" name="Default test" finished-at="2024-01-16T17:37:20 IST" duration-ms="9725">
+>>>>>>> stash
       <class name="com.testcases.TestCase">
+<<<<<<< HEAD
         <test-method is-config="true" signature="setUp()[pri:0, instance:com.testcases.TestCase@6574a52c]" started-at="2024-01-16T15:33:00 IST" name="setUp" finished-at="2024-01-16T15:33:05 IST" duration-ms="5229" status="PASS">
+=======
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.testcases.TestCase@368247b9]" started-at="2024-01-16T17:37:10 IST" name="setUp" finished-at="2024-01-16T17:37:16 IST" duration-ms="5535" status="PASS">
+>>>>>>> stash
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
+<<<<<<< HEAD
         <test-method signature="verifyBrsrCompatibility()[pri:0, instance:com.testcases.TestCase@6574a52c]" started-at="2024-01-16T15:33:05 IST" name="verifyBrsrCompatibility" finished-at="2024-01-16T15:33:07 IST" duration-ms="2561" status="PASS">
+=======
+        <test-method signature="verifyInstagramlinkOnMyntraUsingPageObjectModel()[pri:0, instance:com.testcases.TestCase@368247b9]" started-at="2024-01-16T17:37:16 IST" name="verifyInstagramlinkOnMyntraUsingPageObjectModel" finished-at="2024-01-16T17:37:19 IST" duration-ms="3692" status="PASS">
+>>>>>>> stash
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- verifyBrsrCompatibility -->
         <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testcases.TestCase@6574a52c]" started-at="2024-01-16T15:33:07 IST" name="tearDown" finished-at="2024-01-16T15:33:08 IST" duration-ms="317" status="PASS">
+=======
+        </test-method> <!-- verifyInstagramlinkOnMyntraUsingPageObjectModel -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testcases.TestCase@368247b9]" started-at="2024-01-16T17:37:19 IST" name="tearDown" finished-at="2024-01-16T17:37:20 IST" duration-ms="383" status="PASS">
+>>>>>>> stash
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
