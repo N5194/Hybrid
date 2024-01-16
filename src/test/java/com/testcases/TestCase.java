@@ -31,6 +31,7 @@ import com.Pages.Mango_Result_Page;
 import com.Pages.Myntra_Login_Page;
 import com.Pages.RayBanFilterResultPage;
 import com.Pages.RayBanSearchPage;
+import com.Pages.SearchBrowserPage;
 import com.Pages.SearchHeadphonePage;
 import com.Pages.SearchHnMProductPage;
 import com.Pages.SearchNavigationPage;
@@ -274,13 +275,30 @@ public class TestCase extends TestBase {
 
 	}
 
+	@Test
 	public void verifyTagNavigation() throws InterruptedException {
 		SearchNavigationPage page = new SearchNavigationPage();
 		page.navigateToMen();
 		page.navigateToWomen();
 		page.navigateToKids();
 	}
-	
-	
 
+	@Test
+	public void verifyBrowserCompatibility() {
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--incognito");
+		ChromeDriver driver = new ChromeDriver(option);
+		driver.get("https://www.myntra.com/");
+//		WebDriver driver = new FirefoxDriver();
+//		driver.get("https://www.myntra.com/");
+		driver.findElement(By.cssSelector("input[class=\"desktop-searchBar\"]")).sendKeys("Running shoes", Keys.ENTER);
+		Assert.assertTrue(driver.findElement(By.cssSelector("img[class=\"img-responsive\"]")).isDisplayed(),
+				"product items is not displayed");
+	}
+
+	@Test
+	public void verifyBrsrCompatibility() {
+		SearchBrowserPage page = new SearchBrowserPage();
+		page.enterProductToSerach();
+	}
 }
