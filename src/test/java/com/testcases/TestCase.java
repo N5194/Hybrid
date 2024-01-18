@@ -1,14 +1,11 @@
 package com.testcases;
 
-import static org.testng.Assert.assertTrue;
-
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +14,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
@@ -25,9 +21,10 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.Base.TestBase;
-import com.Keywoards.KeywordsDemo;
 import com.Pages.HeadphoneResultPage;
 import com.Pages.HnMResultPage;
+import com.Pages.LatestOffer_Page;
+import com.Pages.LatestOffer_Result_Page;
 import com.Pages.LinkToInstagram_Page;
 import com.Pages.Mango_Result_Page;
 import com.Pages.Myntra_Login_Page;
@@ -285,8 +282,44 @@ public class TestCase extends TestBase {
 		page.navigateToWomen();
 		page.navigateToKids();
 	}
-<<<<<<< HEAD
-=======
+
+	@Test
+	public void verifyLatestOffersOnMyntra() throws InterruptedException {
+		ChromeOptions ch = new ChromeOptions();
+		ch.addArguments("--disable-notifications");
+		ch.addArguments("--incognito");
+		RemoteWebDriver driver = new ChromeDriver(ch);
+		driver.get("https://www.myntra.com/");
+		driver.manage().window().maximize();
+		driver.findElement(By.cssSelector("a[class=\"myntraweb-sprite desktop-logo sprites-headerLogo \"]")).click();
+		driver.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(4000);
+		driver.findElement(By.cssSelector(
+				"div[class=\"iz-news-hub-floating-icon-container iz-news-hub-floating-icon-container-bottom-right iz-news-hub-subscribe\"]"))
+				.click();
+		List<WebElement> OfferList = driver.findElements(By.cssSelector(
+				"span[class=\"iz-news-hub-notification-title iz-news-hub-text-body iz-news-hub-black-color iz-news-hub-line-clamp iz-news-hub-line-clamp-4\"]"));
+		SoftAssert softly = new SoftAssert();
+
+		for (WebElement list : OfferList) {
+			String text = list.getText();
+			System.out.println("Checking" + text);
+			softly.assertTrue(!text.isEmpty(), "Offer text is empty for: " + text);
+		}
+
+		softly.assertAll();
+	}
+
+	@Test
+	public void verifyLatestOffersOnMyntraUsingPageObjectModel() throws InterruptedException {
+		LatestOffer_Page l = new LatestOffer_Page();
+		l.clickMyntraLogo();
+		l.scrollDown(500);
+		Thread.sleep(4000);
+		LatestOffer_Result_Page r = new LatestOffer_Result_Page();
+		r.getOfferList();
+
+	}
 
 	@Test
 	public void verifyInstagramlinkOnMyntra() {
@@ -325,7 +358,6 @@ public class TestCase extends TestBase {
 		System.out.println(instagramPageTitle);
 		Assert.assertTrue(v.isInstagramPageTitleContaining("Instagram"), "Expected title contains 'Instagram'");
 	}
->>>>>>> stash
 
 	@Test
 	public void verifyBrowserCompatibility() {
