@@ -5,7 +5,7 @@
     <classes>
       <class name="com.testcases.TestCase">
         <methods>
-          <include name="verifyLatestOffersOnMyntra"/>
+          <include name="verifyPriceFilter"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
