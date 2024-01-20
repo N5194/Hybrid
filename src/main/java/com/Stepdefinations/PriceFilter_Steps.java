@@ -29,10 +29,10 @@ public class PriceFilter_Steps {
 	}
 
 	@When("the user searches for {string} sunglasses")
-	public void the_user_searches_for_sunglasses(String brand) {
+	public void the_user_searches_for_sunglasses(String string) {
 		WebElement searchInput = KeywordsDemo.getDriver()
 				.findElement(By.cssSelector("input[placeholder=\"Search for products, brands and more\"]"));
-		searchInput.sendKeys(brand, Keys.ENTER);
+		searchInput.sendKeys("Ray-Ban", Keys.ENTER);
 	}
 
 	@And("filters results by gender")
