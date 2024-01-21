@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>7/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Jan 20 12:54:37 IST 2024</td>
+<td>Started on:</td><td>Sat Jan 20 23:19:11 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>121 seconds (121614 ms)</td>
+<tr><td>Total time:</td><td>9 seconds (9571 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,153 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User searches for Ray-Ban sunglasses with price filter", "Verify Price Filter on Myntra"</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e6d73a30b684ad08902187d70a791591, getElementText {id=43BD97BA73AC62051D4770C2A544372C_element_75}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Pradnya\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51006}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51006/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (e6d73a30b684ad08902187d70a791591)] -&gt; css selector: h4[class=&quot;product-product&quot;]]
-Session ID: e6d73a30b684ad08902187d70a791591
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:192)
-	at com.Stepdefinations.PriceFilter_Steps.the_user_should_see_ray_ban_sunglasses_in_the_search_results_within_the_specified_price_range(PriceFilter_Steps.java:61)
-	at ✽.the user should see &quot;Ray-Ban&quot; sunglasses in the search results within the specified price range(file:///C:/Users/Pradnya/git/Hybrid/src/test/resources/features/VerifyPriceFilter.feature:8)
-</pre></div><a href='#' onClick='toggleBox("stack-trace878205641", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace878205641'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e6d73a30b684ad08902187d70a791591, getElementText {id=43BD97BA73AC62051D4770C2A544372C_element_75}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Pradnya\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51006}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51006/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (e6d73a30b684ad08902187d70a791591)] -&gt; css selector: h4[class=&quot;product-product&quot;]]
-Session ID: e6d73a30b684ad08902187d70a791591
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:192)
-	at com.Stepdefinations.PriceFilter_Steps.the_user_should_see_ray_ban_sunglasses_in_the_search_results_within_the_specified_price_range(PriceFilter_Steps.java:61)
-	at ✽.the user should see &quot;Ray-Ban&quot; sunglasses in the search results within the specified price range(file:///C:/Users/Pradnya/git/Hybrid/src/test/resources/features/VerifyPriceFilter.feature:8)
-</pre></div></td>
-<td>31</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
-<tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Myntra Login Page", "Myntra Login Page Verification"</td>
-<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1577)
-	at org.testng.Assert.assertTrue(Assert.java:56)
-	at org.testng.Assert.assertTrue(Assert.java:66)
-	at com.Stepdefinations.LogInMyntra_Steps.user_should_be_on_the_myntra_login_page(LogInMyntra_Steps.java:45)
-	at ✽.User should be on the Myntra login page(file:///C:/Users/Pradnya/git/Hybrid/src/test/resources/features/LogInToMyntra.feature:9)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1461360262", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1461360262'><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1577)
-	at org.testng.Assert.assertTrue(Assert.java:56)
-	at org.testng.Assert.assertTrue(Assert.java:66)
-	at com.Stepdefinations.LogInMyntra_Steps.user_should_be_on_the_myntra_login_page(LogInMyntra_Steps.java:45)
-	at ✽.User should be on the Myntra login page(file:///C:/Users/Pradnya/git/Hybrid/src/test/resources/features/LogInToMyntra.feature:9)
-</pre></div></td>
-<td>6</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
-<tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify adding a product to the wish list", "Wish List - Add Product"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;your-wishlist-selector&quot;}
-  (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bac88fd65a297f54cc2fc2d3379c38fa, findElement {using=css selector, value=your-wishlist-selector}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Pradnya\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51074/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bac88fd65a297f54cc2fc2d3379c38fa
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at com.Stepdefinations.ProductAddToWishlist_Steps.user_adds_the_product_to_the_wish_list(ProductAddToWishlist_Steps.java:53)
-	at ✽.User adds the product to the wish list(file:///C:/Users/Pradnya/git/Hybrid/src/test/resources/features/WishlistProduct.feature:8)
-</pre></div><a href='#' onClick='toggleBox("stack-trace994712181", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace994712181'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;your-wishlist-selector&quot;}
-  (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bac88fd65a297f54cc2fc2d3379c38fa, findElement {using=css selector, value=your-wishlist-selector}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Pradnya\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51074/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bac88fd65a297f54cc2fc2d3379c38fa
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at com.Stepdefinations.ProductAddToWishlist_Steps.user_adds_the_product_to_the_wish_list(ProductAddToWishlist_Steps.java:53)
-	at ✽.User adds the product to the wish list(file:///C:/Users/Pradnya/git/Hybrid/src/test/resources/features/WishlistProduct.feature:8)
-</pre></div></td>
-<td>11</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -223,40 +76,10 @@ Session ID: bac88fd65a297f54cc2fc2d3379c38fa
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User verifies navigation links on Myntra", "Verify Navigation on Myntra"</td>
+<td title='com.testcases.TestCase.verifyInstagramlinkOnMyntraUsingPageObjectModel()'><b>verifyInstagramlinkOnMyntraUsingPageObjectModel</b><br>Test class: com.testcases.TestCase</td>
 <td></td>
-<td>4</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
-<tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User verifies browser compatibility on Myntra", "Verify Browser Compatibility on Myntra"</td>
-<td></td>
-<td>6</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
-<tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User verifies the latest offers on Myntra", "Verify Latest Offers on Myntra"</td>
-<td></td>
-<td>9</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
-<tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User searches for H&M products on Myntra", "Verify H&M Products on Myntra"</td>
-<td></td>
-<td>13</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
-<tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User verifies MANGO brand products on Myntra", "Verify MANGO Brand Products"</td>
-<td></td>
-<td>9</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
-<tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User adds headphones to the cart on Myntra", "Verify Add To Cart for Headphones"</td>
-<td></td>
-<td>18</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
-<tr>
-<td title='com.testcases.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.testcases.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User verifies the Instagram link on Myntra", "Verify Instagram Link on Myntra"</td>
-<td></td>
-<td>9</td>
-<td>com.testcases.TestRunner@17f62e33</td></tr>
+<td>3</td>
+<td>com.testcases.TestCase@449a4f23</td></tr>
 </table><p>
 </body>
 </html>

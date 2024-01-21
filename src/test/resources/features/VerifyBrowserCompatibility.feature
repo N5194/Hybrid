@@ -1,6 +1,9 @@
-Feature: Verify Browser Compatibility on Myntra
+    
+    Feature: Verify Browser Compatibility
 
-  Scenario: User verifies browser compatibility on Myntra
-    Given user open myntra website
-    When the user searches for "Running shoes"
-    Then the user should see product items displayed
+  Scenario: Verify searching for a product in the browser
+    Given User opens the search browser page
+    When User enters the product to search
+    Then Search results are displayed
+    
+    

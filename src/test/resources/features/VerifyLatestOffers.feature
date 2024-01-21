@@ -1,9 +1,8 @@
+
 Feature: Verify Latest Offers on Myntra
 
-  Scenario: User verifies the latest offers on Myntra
-    Given user on the Myntra website
-    When the user clicks on the Myntra logo
-    And scrolls down the page
-    And clicks on the subscribe icon for latest offers
-    Then the user should see non-empty latest offers
-
+  Scenario: Verify latest offers on Myntra
+    Given User is on the Myntra homepage now
+    When User clicks on the Myntra logo
+    And User scrolls down 500 pixels
+    Then User checks the latest offers list

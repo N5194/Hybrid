@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.Keywoards.KeywordsDemo;
 
 public class LinkToInstagram_Page {
-	@FindBy(css = "\"img[src=\"https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png\"]")
+	@FindBy(css = "img[src=\"https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png\"]")
 	WebElement instagram;
 
 	public void openMyntraHomePage() {
@@ -18,9 +18,10 @@ public class LinkToInstagram_Page {
 	}
 
 	public void clickInstagramLink() {
-		WebElement instagramLink = KeywordsDemo.getDriver().findElement(By.cssSelector(
-				"img[src=\"https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png\"]"));
-		instagramLink.click();
+		KeywordsDemo.getDriver().findElement(By.cssSelector(
+				"img[src=\"https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png\"]"))
+				.click();
+
 	}
 
 	public LinkToInstagram_Page() {

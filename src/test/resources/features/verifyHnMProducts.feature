@@ -1,6 +1,7 @@
-Feature: Verify H&M Products on Myntra
 
-  Scenario: User searches for H&M products on Myntra
-    Given user is on the Myntra website
-    When the user searches for "H&M" products
-    Then the user should see "H&M" products in the search results
+    Feature: Verify Search on H&M Product Page
+
+  Scenario: Verify searching for H&M products
+    Given User is on the H&M Product Page
+    When User enters H&M in the search box and presses ENTER
+    Then Search results for "H&M" are displayed
