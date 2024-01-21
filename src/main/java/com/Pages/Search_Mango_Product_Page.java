@@ -1,5 +1,6 @@
 package com.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,7 +12,7 @@ public class Search_Mango_Product_Page {
 	public WebElement mangoproduct;
 
 	public void enterTextToSearch(CharSequence... textname) {
-		mangoproduct.sendKeys(textname);
+		KeywordsDemo.getDriver().findElement(By.cssSelector("input[placeholder=\"Search for products, brands and more\"]")).sendKeys(textname);
 
 	}
 

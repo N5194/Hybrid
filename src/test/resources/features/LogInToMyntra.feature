@@ -1,9 +1,10 @@
-Feature: Myntra Login Page Verification
+ Feature: Myntra Login Feature
 
   Scenario: Verify Myntra Login Page
-    Given User opens the Myntra website to LogIn
-    When User clicks on the login button
-    And User clicks on the login via OTP option
-    And User enters the mobile number "9156482884"
-    And User clicks on the submit button
-    Then User should be on the Myntra login page
+    Given I am on the Myntra login page
+    When I click the login button
+    When I click the sign-up link
+    When I enter my mobile number "9156482884"
+    When I click the submit button
+    Then I should see the result
+    

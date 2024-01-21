@@ -4,14 +4,16 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.Keywoards.KeywordsDemo;
+import com.Pages.Myntra_Login_Page;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LogInMyntra_Steps {
+	Myntra_Login_Page m = new Myntra_Login_Page();
 
-	@Given("User opens the Myntra website to LogIn")
+	@Given("I am on the Myntra login page")
 	public void userOpensMyntraWebsite() {
 		KeywordsDemo keywords = new KeywordsDemo();
 		keywords.openBrowser("Chrome");
@@ -19,30 +21,28 @@ public class LogInMyntra_Steps {
 		KeywordsDemo.getDriver().manage().window().maximize();
 	}
 
-	@When("User clicks on the login button")
-	public void user_clicks_on_the_login_button() {
-		KeywordsDemo.getDriver().findElement(By.cssSelector("span[data-reactid=\"856\"]")).click();
+	@When("I click the login button")
+	public void iClickLoginButton() {
+		m.clickLoginButton();
 	}
 
-	@When("User clicks on the login via OTP option")
-	public void user_clicks_on_the_login_via_otp_option() {
-		KeywordsDemo.getDriver().findElement(By.cssSelector("a[data-reactid=\"865\"]")).click();
+	@When("I click the sign-up link")
+	public void iClickSignUpLink() {
+		m.clickSignUpLink();
 	}
 
-	@When("User enters the mobile number {string}")
-	public void user_enters_the_mobile_number(String string) {
-		KeywordsDemo.getDriver().findElement(By.cssSelector("input[class=\"form-control mobileNumberInput\"]"))
-				.sendKeys("9156485884");
+	@When("I enter my mobile number \"([^\"]*)\"$")
+	public void iEnterMobileNumber(String mobileNumber) {
+		m.enterMobileNumber(mobileNumber);
 	}
 
-	@When("User clicks on the submit button")
-	public void user_clicks_on_the_submit_button() {
-		KeywordsDemo.getDriver().findElement(By.cssSelector("[class=\"submitBottomOption\"]")).click();
+	@When("I click the submit button")
+	public void iClickSubmitButton() throws InterruptedException {
+		m.clickSubmitButton();
 	}
 
-	@Then("User should be on the Myntra login page")
-	public void user_should_be_on_the_myntra_login_page() {
+	@Then("I should see the result")
+	public void iShouldSeeResult() {
 		Assert.assertTrue(KeywordsDemo.getDriver().getCurrentUrl().contains("myntra-login-page-url"));
 	}
-
 }

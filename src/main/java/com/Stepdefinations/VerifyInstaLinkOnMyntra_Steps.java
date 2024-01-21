@@ -11,49 +11,38 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
 
 import com.Keywoards.KeywordsDemo;
+import com.Pages.LinkToInstagram_Page;
+import com.Pages.VerifyInstagram_Page;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class VerifyInstaLinkOnMyntra_Steps {
+	private LinkToInstagram_Page linkPage = new LinkToInstagram_Page();
+	private VerifyInstagram_Page verifyPage = new VerifyInstagram_Page();
+	private String instagramPageTitle;
 
-	@Given("the user is open the Myntra website")
+	@Given("User is on the Myntra homepage")
 	public void openMyntraWebsite() {
 		KeywordsDemo keywords = new KeywordsDemo();
 		keywords.openBrowser("Chrome");
 		keywords.openUrl("https://www.myntra.com/");
 		KeywordsDemo.getDriver().manage().window().maximize();
-	}
-
-	@When("the user scrolls down the page")
-	public void the_user_scrolls_down_the_page() {
 		KeywordsDemo.getDriver().executeScript("window.scrollBy(0,2800)");
 	}
 
-	@When("clicks on the Instagram link")
-	public void clicks_on_the_instagram_link() {
-		KeywordsDemo.getDriver().findElement(By.cssSelector(
-				"img[src=\"https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png\"]"))
-				.click();
+	@When("User clicks on the Instagram link")
+	public void userClicksOnInstagramLink() {
+		linkPage.clickInstagramLink();
+		verifyPage.switchToInstagramPage();
+		instagramPageTitle = verifyPage.getInstagramPageTitle();
 	}
 
-	@When("switches to the Instagram login page")
-	public void switches_to_the_instagram_login_page() {
-		FluentWait<RemoteWebDriver> wait = new FluentWait<>(KeywordsDemo.getDriver());
-		wait.pollingEvery(Duration.ofMillis(2000));
-		wait.withTimeout(Duration.ofSeconds(60));
-		wait.ignoring(NoSuchElementException.class);
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[class=\"_abn5 _abn6 _aa5h\"]")))
-				.click();
-	}
-
-	@Then("the user should see the Instagram page with the title containing {string}")
-	public void the_user_should_see_the_instagram_page_with_the_title_containing(String expectedTitle) {
-        String instagramPageTitle = KeywordsDemo.getDriver().getTitle();
-        System.out.println(instagramPageTitle);
-        Assert.assertTrue(instagramPageTitle.contains(expectedTitle), "Expected title contains '" + expectedTitle + "'");
-        KeywordsDemo.getDriver().quit();
-
+	@Then("Instagram page is displayed with the title containing {string}")
+	public void instagramPageIsDisplayedWithTitleContaining(String expectedTitle) {
+		System.out.println(instagramPageTitle);
+		Assert.assertTrue(verifyPage.isInstagramPageTitleContaining(expectedTitle),
+				"Expected title contains '" + expectedTitle + "'");
 	}
 }

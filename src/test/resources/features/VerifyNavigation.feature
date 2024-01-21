@@ -1,12 +1,9 @@
-Feature: Verify Navigation on Myntra
+    
+    Feature: Verify Tag Navigation
 
-  Scenario: User verifies navigation links on Myntra
-    Given the user on the Myntra website
-    When the user hovers over the "Men" link
-    Then the "Men" link should be displayed
-
-    When the user hovers over the "Women" link
-    Then the "Women" link should be displayed
-
-    When the user hovers over the "Kids" link
-    Then the "Kids" link should be displayed
+  Scenario: Verify navigation to Men, Women, and Kids sections
+    Given User is on the search navigation page
+    When User navigates to Men section
+    And User navigates to Women section
+    And User navigates to Kids section
+    Then User has successfully navigated through Men, Women, and Kids sections

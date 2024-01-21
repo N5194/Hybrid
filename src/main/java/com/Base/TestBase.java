@@ -7,19 +7,19 @@ import com.Keywoards.KeywordsDemo;
 
 public class TestBase {
 
-	KeywordsDemo keyword = new KeywordsDemo();
-
-	@BeforeMethod
-	public void setUp() {
-		keyword.openBrowser("Chrome");
-		keyword.maximizeBrowser();
-		keyword.openUrl(Config.getAppUrl());
-
-	}
-
-	@AfterMethod
-	public void tearDown() {
-		keyword.quitAllWindows();
-	}
+//	KeywordsDemo keyword = new KeywordsDemo();
+//
+//	@BeforeMethod
+//	public void setUp() {
+//		keyword.openBrowser("Chrome");
+//		keyword.maximizeBrowser();
+//		keyword.openUrl(Config.getAppUrl());
+//
+//	}
+//
+//	@AfterMethod
+//	public void tearDown() {
+//		keyword.quitAllWindows();
+//	}
 
 }

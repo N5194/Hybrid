@@ -16,7 +16,7 @@ import com.exception.InvalidSelectorException;
 
 public class KeywordsDemo {
 
-	private static RemoteWebDriver driver = null;
+	private static RemoteWebDriver driver;
 
 	/**
 	 * This method will launch specific browser.
