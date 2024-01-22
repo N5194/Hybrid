@@ -5,9 +5,7 @@
     <classes>
       <class name="com.testcases.TestCase">
         <methods>
-          <include name="tearDown"/>
-          <include name="verifyInstagramlinkOnMyntraUsingPageObjectModel"/>
-          <include name="setUp"/>
+          <include name="verifyWishListAddProductUsingPageObjectModel"/>
         </methods>
       </class> <!-- com.testcases.TestCase -->
     </classes>

@@ -13,40 +13,42 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.asserts.SoftAssert;
 
 import com.Keywoards.KeywordsDemo;
+import com.Pages.RayBanFilterResultPage;
+import com.Pages.RayBanSearchPage;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class PriceFilter_Steps {
 
-	@Given("the user is on the Myntra site")
-	public void openMyntraWebsite() {
+    RayBanSearchPage page = new RayBanSearchPage();
+    RayBanFilterResultPage result = new RayBanFilterResultPage();
+    
+    @Given("user is on the RayBan search page")
+    public void userIsOnRayBanSearchPage() {
 		KeywordsDemo keywords = new KeywordsDemo();
 		keywords.openBrowser("Chrome");
 		keywords.openUrl("https://www.myntra.com/");
-	}
+		KeywordsDemo.getDriver().manage().window().maximize();
+    }
+    @When("user enters {string} and hits Enter")
+    public void userEntersProductNameAndHitsEnter(String productName) {
+        page.enterProductToSerach(productName, Keys.ENTER);
+    }
 
-	@When("the user searches for {string} sunglasses")
-	public void the_user_searches_for_sunglasses(String string) {
-		WebElement searchInput = KeywordsDemo.getDriver()
-				.findElement(By.cssSelector("input[placeholder=\"Search for products, brands and more\"]"));
-		searchInput.sendKeys("Ray-Ban", Keys.ENTER);
-	}
+    @When("user clicks on the gender filter")
+    public void userClicksOnGenderFilter() throws InterruptedException {
+        page.clickOnGender();
+    }
 
-	@And("filters results by gender")
-	public void filters_results_by_gender() {
-		KeywordsDemo.getDriver().findElement(By.cssSelector("ul.gender-list>li>label:nth-of-type(1)")).click();
-	}
+    @When("user clicks on the price filter")
+    public void userClicksOnPriceFilter() {
+        result.clickOnPriceFilter();
+    }
 
-	@And("applies a price filter")
-	public void applies_a_price_filter() {
-		KeywordsDemo.getDriver().findElement(By.cssSelector("ul.price-list>li:nth-of-type(1)")).click();
-	}
-
-	@Then("the user should see {string} sunglasses in the search results within the specified price range")
-	public void the_user_should_see_ray_ban_sunglasses_in_the_search_results_within_the_specified_price_range(String brand) {
+    @Then("user should see filtered results")
+    public void userShouldSeeFilteredResults(String brand ) {
 		FluentWait<RemoteWebDriver> wait = new FluentWait<>(KeywordsDemo.getDriver());
 		wait.pollingEvery(Duration.ofMillis(500));
 		wait.withTimeout(Duration.ofSeconds(60));
@@ -65,6 +67,6 @@ public class PriceFilter_Steps {
 
 		softly.assertAll();
 		KeywordsDemo.getDriver().quit();
-	}
-
+    }
+   
 }
