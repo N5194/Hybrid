@@ -1,10 +1,12 @@
 package com.Keywoards;
 
 import java.awt.AWTException;
+
 import java.awt.Robot;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +17,7 @@ import com.Error.InvalidBrowserError;
 import com.exception.InvalidSelectorException;
 
 public class KeywordsDemo {
-
+	private static final Logger log = Logger.getLogger(KeywordsDemo.class);
 	private static RemoteWebDriver driver;
 
 	/**
@@ -23,7 +25,7 @@ public class KeywordsDemo {
 	 * 
 	 * @param browserName
 	 */
-	
+
 	/**
 	 * This method return the driver instance. Make sure,before calling this one
 	 * should call {@code open browser(String browserName)} method so that it can
@@ -34,19 +36,19 @@ public class KeywordsDemo {
 	public static RemoteWebDriver getDriver() {
 		return driver;
 	}
+
 	public void openBrowser(String browserName) {
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();
-			System.out.println("Opening ChromeDriver");
+			log.info("Opening ChromeDriver");
 		} else if (browserName.equalsIgnoreCase("Firefox")) {
 			driver = new FirefoxDriver();
-			System.out.println("Opening FirefoxDriver");
+			log.info("Opening FirefoxDriver");
 		} else {
-			System.out.println("invalid browser name");
+			log.info("invalid browser name");
 			throw new InvalidBrowserError(browserName);
 		}
 	}
-
 
 	/**
 	 * this method will open specific url
@@ -55,7 +57,7 @@ public class KeywordsDemo {
 	 */
 	public void openUrl(String url) {
 		driver.get(url);
-		System.out.println("Launching URL");
+		log.info("Launching URL");
 	}
 
 	/**
