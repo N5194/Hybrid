@@ -27,10 +27,6 @@ public class MangoBrandProductSearch_Steps {
 
 	@Given("the user is on the Mango product search page")
 	public void userIsOnMangoProductSearchPage() {
-		KeywordsDemo keywords = new KeywordsDemo();
-		keywords.openBrowser("Chrome");
-		keywords.openUrl("https://www.myntra.com/");
-		keywords.getDriver().manage().window().maximize();
 	}
 
 	@When("the user enters MANGO and presses ENTER")

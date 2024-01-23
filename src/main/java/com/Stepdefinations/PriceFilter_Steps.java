@@ -27,10 +27,6 @@ public class PriceFilter_Steps {
     
     @Given("user is on the RayBan search page")
     public void userIsOnRayBanSearchPage() {
-		KeywordsDemo keywords = new KeywordsDemo();
-		keywords.openBrowser("Chrome");
-		keywords.openUrl("https://www.myntra.com/");
-		KeywordsDemo.getDriver().manage().window().maximize();
     }
     @When("user enters {string} and hits Enter")
     public void userEntersProductNameAndHitsEnter(String productName) {

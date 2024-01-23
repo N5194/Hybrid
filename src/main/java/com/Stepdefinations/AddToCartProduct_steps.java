@@ -23,10 +23,6 @@ public class AddToCartProduct_steps {
 
 	@Given("I am on the headphone search page")
 	public void userIsOnMyntraWebsite() {
-		KeywordsDemo keywords = new KeywordsDemo();
-		keywords.openBrowser("Chrome");
-		keywords.openUrl("https://www.myntra.com/");
-		keywords.getDriver().manage().window().maximize();
 	}
 
 	@When("I enter and search for the product")

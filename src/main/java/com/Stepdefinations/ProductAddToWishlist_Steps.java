@@ -17,10 +17,6 @@ public class ProductAddToWishlist_Steps {
 
 	@Given("User opens Myntra website")
 	public void userOpensMyntraWebsite() {
-		KeywordsDemo keywords = new KeywordsDemo();
-		keywords.openBrowser("Chrome");
-		keywords.openUrl("https://www.myntra.com/");
-		KeywordsDemo.getDriver().manage().window().maximize();
 	}
 
 	@When("User hovers over the navigation menu")

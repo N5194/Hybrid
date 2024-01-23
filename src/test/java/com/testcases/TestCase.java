@@ -329,7 +329,7 @@ public class TestCase extends TestBase {
 		RemoteWebDriver driver = new ChromeDriver(ch);
 		driver.get("https://www.myntra.com/");
 		driver.manage().window().maximize();
-		driver.executeScript("window.scrollBy(0,2800)");
+		driver.executeScript("window.scrollBy(0,3000)");
 		driver.findElement(By.cssSelector(
 				"img[src=\"https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png\"]"))
 				.click();

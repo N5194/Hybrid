@@ -21,7 +21,7 @@ public class Hooks {
 
 	@After
 	public void tearDown() {
-		keyword.closeDriver();
+		keyword.quitAllWindows();
 	}
 
 }
