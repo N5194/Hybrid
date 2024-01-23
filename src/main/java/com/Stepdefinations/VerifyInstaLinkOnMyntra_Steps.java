@@ -25,11 +25,7 @@ public class VerifyInstaLinkOnMyntra_Steps {
 
 	@Given("User is on the Myntra homepage")
 	public void openMyntraWebsite() {
-		KeywordsDemo keywords = new KeywordsDemo();
-		keywords.openBrowser("Chrome");
-		keywords.openUrl("https://www.myntra.com/");
-		KeywordsDemo.getDriver().manage().window().maximize();
-		KeywordsDemo.getDriver().executeScript("window.scrollBy(0,2800)");
+		KeywordsDemo.getDriver().executeScript("window.scrollBy(0,3000)");
 	}
 
 	@When("User clicks on the Instagram link")

@@ -16,10 +16,6 @@ public class VerifyBrowserCompatibility {
 
 	@Given("User opens the search browser page")
 	public void openMyntraWebsite() {
-		KeywordsDemo keywords = new KeywordsDemo();
-		keywords.openBrowser("Chrome");
-		keywords.openUrl("https://www.myntra.com/");
-		KeywordsDemo.getDriver().manage().window().maximize();
 	}
 
 	@When("User enters the product to search")

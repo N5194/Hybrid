@@ -15,10 +15,6 @@ public class LogInMyntra_Steps {
 
 	@Given("I am on the Myntra login page")
 	public void userOpensMyntraWebsite() {
-		KeywordsDemo keywords = new KeywordsDemo();
-		keywords.openBrowser("Chrome");
-		keywords.openUrl("https://www.myntra.com/");
-		KeywordsDemo.getDriver().manage().window().maximize();
 	}
 
 	@When("I click the login button")

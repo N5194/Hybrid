@@ -17,10 +17,6 @@ public class VerifyNavigation_Steps {
 
 	@Given("User is on the search navigation page")
 	public void userIsOnMyntraWebsite() {
-		KeywordsDemo keywords = new KeywordsDemo();
-		keywords.openBrowser("Chrome");
-		keywords.openUrl("https://www.myntra.com/");
-		KeywordsDemo.getDriver().manage().window().maximize();
 	}
 
 	@When("User navigates to Men section")

@@ -26,10 +26,6 @@ public class HnMproducts_Steps {
 
 	@Given("User is on the H&M Product Page")
 	public void openMyntraWebsite() {
-		KeywordsDemo keywords = new KeywordsDemo();
-		keywords.openBrowser("Chrome");
-		keywords.openUrl("https://www.myntra.com/");
-		KeywordsDemo.getDriver().manage().window().maximize();
 	}
 
 	@When("User enters H&M in the search box and presses ENTER")
